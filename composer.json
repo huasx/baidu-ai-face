@@ -1,0 +1,19 @@
+{
+  "name": "huasx/ai-face",
+  "description": "PHP BaiDu Ai-Face Sdk",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "ricky",
+      "email": "huashunxin01@gmail.com"
+    }
+  ],
+  "require": {
+    "php":">=5.4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "AIFace\\": "src/"
+    }
+  }
+}
