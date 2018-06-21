@@ -6,6 +6,8 @@ env:
 
 php:
   - 7.1.0
-  - nightly
+
+install: true
+script: true
 
 sudo: false
