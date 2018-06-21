@@ -7,7 +7,7 @@
  */
 include 'base.php';
 
-$token = '24.f4a05c0ff9c4e3f58905e11dc7ec273a.2592000.1532139014.282335-10527228';
+$token = '24.7065ef43a51b3310374fb82387eeabcc.2592000.1532143268.282335-10527228';
 $param = [
     'image' => 'https://ai.bdstatic.com/file/52BC00FFD4754A6298D977EDAD033DA0',
     'image_type' => 'URL',
