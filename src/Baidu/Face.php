@@ -7,7 +7,22 @@
  */
 
 namespace AIFace\Baidu;
-class Face
+
+class Face extends Base
 {
-    
+
+    public function init($options)
+    {
+        if ($options){
+            $this->token     = empty($options['token']) ? "" : $options['token'];
+        }
+
+        return $this;
+    }
+
+    //人脸检测
+    public function detect($param)
+    {
+        return $this->callApi('detect', $param);
+    }
 }
