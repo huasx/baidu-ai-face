@@ -2,8 +2,8 @@
 <p align="center">
 <a href="https://travis-ci.org/huasx/baidu-ai-face"><img src="https://api.travis-ci.org/huasx/baidu-ai-face.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/huasx/baidu-ai-face"><img src="https://poser.pugx.org/huasx/baidu-ai-face/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/huasx/baidu-ai-face"><img src="https://poser.pugx.org/huasx/baidu-ai-face/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/huasx/baidu-ai-face"><img src="https://poser.pugx.org/huasx/baidu-ai-face/license.svg" alt="License"></a>
+<a href="https://packagist.org/packages/huasx/ai-face"><img src="https://poser.pugx.org/huasx/ai-face/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/huasx/ai-face"><img src="https://poser.pugx.org/huasx/ai-face/license.svg" alt="License"></a>
 </p>
 
 ## baidu-ai-face
