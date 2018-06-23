@@ -20,9 +20,38 @@ class Face extends Base
         return $this;
     }
 
-    //人脸检测
+    /**
+     * 人脸检测
+     *
+     * @param $param
+     * @return \AIFace\Curl
+     */
     public function detect($param)
     {
         return $this->callApi('detect', $param);
     }
+
+    /**
+     * 人脸对比
+     *
+     * @param $param
+     * @return \AIFace\Curl
+     */
+    public function match($param)
+    {
+        return $this->callApi('match', $param);
+    }
+
+    /**
+     * 人脸搜索
+     *
+     * @param $param
+     * @return \AIFace\Curl
+     */
+    public function search($param)
+    {
+        return $this->callApi('search', $param);
+    }
+
+
 }
