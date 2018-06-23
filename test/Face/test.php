@@ -7,4 +7,5 @@
  */
 
 include '../base.php';
+
 return 'success';
