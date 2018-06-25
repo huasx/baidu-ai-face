@@ -1,14 +1,15 @@
-<?php namespace AIFace;
+<?php
+
+namespace AIFace;
 
 /**
  * Created by PhpStorm.
  * User: 蔡旭东 huashunxin01@gmail.com
  * Date: 18-6-21
- * Time: 下午2:18
+ * Time: 下午2:18.
  */
 class Curl
 {
-
     private $ch;
     private $timeout = 5;
     private $is_ajax = false;
@@ -24,6 +25,7 @@ class Curl
 
     /**
      * Verify SSL Cert.
+     *
      * @ignore
      */
     private $ssl_verifypeer = false;
@@ -39,24 +41,21 @@ class Curl
      */
     private function exec($url, $method = 'GET', $post_data = '')
     {
-
         if (!$url) {
-            throw new \RuntimeException('CURL url is null:' . __FILE__);
+            throw new \RuntimeException('CURL url is null:'.__FILE__);
         }
         $this->ch = curl_init();
         $this->defaultOptions($this->ch, $url);
         curl_setopt($this->ch, CURLOPT_CUSTOMREQUEST, $method);
-        $is_file    = false;
+        $is_file = false;
         $encode_arr = [];
         if ($post_data) {
             if (is_array($post_data)) {
                 foreach ($post_data as $k => $v) {
-                    if ("@" != substr($v, 0, 1)) //判断是不是文件上传
-                    {
+                    if ('@' != substr($v, 0, 1)) { //判断是不是文件上传
                         $encode_arr[$k] = $v;
-                    } else //文件上传用multipart/form-data，否则用www-form-urlencoded
-                    {
-                        $is_file        = true;
+                    } else { //文件上传用multipart/form-data，否则用www-form-urlencoded
+                        $is_file = true;
                         $encode_arr[$k] = new \CURLFile(substr($v, 1));
                     }
                 }
@@ -78,23 +77,23 @@ class Curl
 //            );
             curl_setopt($this->ch, CURLOPT_HTTPHEADER, $this->http_header);
         }
-        $this->body       = curl_exec($this->ch);
+        $this->body = curl_exec($this->ch);
         $this->curl_error = curl_errno($this->ch);
-        $this->header     = curl_getinfo($this->ch);
+        $this->header = curl_getinfo($this->ch);
         $this->log($url);
         if (is_resource($this->ch)) {
             curl_close($this->ch);
         }
 
-        $this->url       = $url;
-        $this->method    = $method;
+        $this->url = $url;
+        $this->method = $method;
         $this->post_data = $post_data;
-        return $this;
 
+        return $this;
     }
 
     /**
-     * 重试次数 $this->get()->retry(2)
+     * 重试次数 $this->get()->retry(2).
      *
      * @param $num
      *
@@ -122,7 +121,6 @@ class Curl
 
     public function setSSLFile($cert_file, $key_file)
     {
-
         $this->ssl_verifypeer = true;
         if (is_file($cert_file)) {
             $this->ssl_cert_file = $cert_file;
@@ -194,9 +192,9 @@ class Curl
             curl_close($conn[$i]);
         } // 结束清理  
         curl_multi_close($mh);
+
         return $contents;
     }
-
 
     private function defaultOptions(&$ch, $url)
     {
@@ -218,7 +216,7 @@ class Curl
 
         if ($this->is_ajax) {
             curl_setopt($ch, CURLOPT_HTTPHEADER,
-                array("X-Requested-With: XMLHttpRequest", "X-Prototype-Version:1.5.0"));
+                ['X-Requested-With: XMLHttpRequest', 'X-Prototype-Version:1.5.0']);
         }
 
         curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
@@ -273,7 +271,7 @@ class Curl
      * time_commect：client和server端建立TCP 连接的时间 里面包括DNS解析的时间
      * starttransfer_time：从client发出请求；到web的server 响应第一个字节的时间 包括前面的2个时间
      * redirect_time：重定向时间，包括到最后一次传输前的几次重定向的DNS解析，连接，预传输，传输时间。
-     * total_time：总时间
+     * total_time：总时间.
      *
      * @param $time_key
      *
@@ -287,24 +285,28 @@ class Curl
     public function setReferer($url)
     {
         $this->referer = $url;
+
         return $this;
     }
 
     public function setAjax()
     {
         $this->is_ajax = true;
+
         return $this;
     }
 
     public function setTimeout($second = 5)
     {
         $this->timeout = $second;
+
         return $this;
     }
 
     public function setLog($is_log)
     {
         $this->is_log = $is_log;
+
         return $this;
     }
 }
