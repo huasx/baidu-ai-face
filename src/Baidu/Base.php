@@ -3,7 +3,7 @@
  * Created by VeryStar.
  * Author: hsx
  * Create: 2018/6/20 18:00
- * Editor: created by PhpStorm
+ * Editor: created by PhpStorm.
  */
 
 namespace AIFace\Baidu;
@@ -18,7 +18,7 @@ abstract class Base
     protected $curl;
     protected $api_url = 'https://aip.baidubce.com/rest/2.0/face/';
     protected $version = 'v3';
-    protected $token = '';//接口调用凭证
+    protected $token = ''; //接口调用凭证
 
     public function __construct($curl = null)
     {
@@ -36,12 +36,11 @@ abstract class Base
 
     public function callApi($action, $param)
     {
-        $this->api_url .= $this->version . '/' . $action . '?access_token=' . $this->token;
+        $this->api_url .= $this->version.'/'.$action.'?access_token='.$this->token;
         $this->curl->setHeader([
             'Content-Type' => 'application/json',
         ]);
+
         return $this->curl->post($this->api_url, json_encode($param, JSON_UNESCAPED_UNICODE));
     }
-
-
 }

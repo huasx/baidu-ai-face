@@ -3,7 +3,7 @@
  * Created by VeryStar.
  * Author: hsx
  * Create: 2018/6/20 18:08
- * Editor: created by PhpStorm
+ * Editor: created by PhpStorm.
  */
 
 namespace AIFace\Baidu;
@@ -19,7 +19,7 @@ class Token
     private $api_url = 'https://aip.baidubce.com/oauth/2.0/token';
     private $client_id = '';
     private $client_secret = '';
-    private $grant_type = 'client_credentials';//固定
+    private $grant_type = 'client_credentials'; //固定
 
     public function __construct($curl = null)
     {
@@ -33,8 +33,8 @@ class Token
     public function init($options = [])
     {
         if ($options) {
-            $this->client_id     = empty($options['client_id']) ? "" : $options['client_id'];
-            $this->client_secret = empty($options['client_secret']) ? "" : $options['client_secret'];
+            $this->client_id = empty($options['client_id']) ? '' : $options['client_id'];
+            $this->client_secret = empty($options['client_secret']) ? '' : $options['client_secret'];
         }
 
         return $this;
@@ -50,6 +50,4 @@ class Token
 
         return $this->curl->post($this->api_url, $param);
     }
-
 }
- 
