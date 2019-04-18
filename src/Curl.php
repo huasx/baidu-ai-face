@@ -4,7 +4,7 @@ namespace AIFace;
 
 /**
  * Created by PhpStorm.
- * User: 蔡旭东 huashunxin01@gmail.com
+ * User: Ricky huashunxin01@gmail.com
  * Date: 18-6-21
  * Time: 下午2:18.
  */
