@@ -1,7 +1,7 @@
 <?php
 /**
- * Created by VeryStar.
- * Author: hsx
+ * Created by Ricky.
+ * Author: Ricky Hua
  * Create: 2018/6/20 17:58
  * Editor: created by PhpStorm.
  */
