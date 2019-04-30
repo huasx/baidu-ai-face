@@ -10,3 +10,41 @@
 ## baidu-ai-face
 
 ### baidu ai face sdk for PHP
+
+## Usage
+
+### Download
+```
+composer require huasx/ai-face
+```
+
+### Example
+```php
+//get token
+$ret = $obj->init(
+    [
+        'client_id'     => 'Your Client Id',
+        'client_secret' => 'Your Client Secret',
+    ]
+)->getToken();
+var_dump($ret->getBody());
+
+
+
+//seach
+$search = [
+    'image'         => 'https://ai.bdstatic.com/file/52BC00FFD4754A6298D977EDAD033DA0',
+    'image_type'    => 'URL',
+    'group_id_list' => 'group1',
+];
+
+$obj = new \AIFace\Baidu\Face();
+
+$ret = $obj->init([
+    'token' => $token,
+])->search($search);
+
+var_dump($ret->getBody());
+
+```
+
